@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+android {
+    compileSdk rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        vectorDrawables.useSupportLibrary = true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(),
+                             rxhttp_package     : 'rxhttp',   //非必须，指定RxHttp类包名
+                             //传入你依赖的rxjava版本，可传入rxjava2、rxjava3，依赖RxJava时必须
+                             rxhttp_rxjava      : 'rxjava3'
+                ]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+
+    //基础引用
+    api 'androidx.appcompat:appcompat:1.4.0'
+    api 'com.google.android.material:material:1.4.0'
+    api 'androidx.recyclerview:recyclerview:1.2.1'
+    api 'androidx.constraintlayout:constraintlayout:2.1.1'
+    api 'com.google.android.material:material:1.5.0-alpha03'
+
+    //RxHttp引用
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2-native-mt"
+
+    api 'com.github.liujingxing.rxhttp:rxhttp:2.7.0'
+    api 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2' //rxhttp v2.2.2版本起，需要手动依赖okhttp
+    kapt 'com.github.liujingxing.rxhttp:rxhttp-compiler:2.7.0'
+    //生成RxHttp类，纯Java项目，请使用annotationProcessor代替kapt
+    api 'com.github.liujingxing.rxlife:rxlife-coroutine:2.1.0' //管理协程生命周期，页面销毁，关闭请求
+    api 'io.reactivex.rxjava3:rxjava:3.0.6'
+    api 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    api 'com.github.liujingxing.rxlife:rxlife-rxjava3:2.1.0' //管理RxJava3生命周期，页面销毁，关闭请求
+
+    //Arouter 引用
+    api 'com.alibaba:arouter-api:1.5.2'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
+
+    //RecyclerView万能适配器
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    //glide 图片加载
+    api 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // 刷新控件依赖
+    api 'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
+    api 'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
+    api 'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载
+
+    //liveEvent Bus
+    api 'io.github.jeremyliao:live-event-bus-x:1.8.0'
+
+    //今日头条适配方案
+    api 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+
+    //bugly 接入
+    api 'com.tencent.bugly:crashreport:latest.release'
+
+    //mmkv
+    api 'com.tencent:mmkv:1.2.11'
+
+    api "androidx.core:core-ktx:+"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    api 'com.google.code.gson:gson:2.8.9'
+
+}
