@@ -1,5 +1,6 @@
 package com.library_common.base;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -31,12 +32,14 @@ import me.jessyan.autosize.internal.CustomAdapt;
 public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseViewModel> extends AppCompatActivity implements CustomAdapt {
     protected V mBinding;
     protected VM mViewModel;
+    protected Context mContext;
 
     private LoadingDialog mLoadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.mContext = this;
         StatusBarUtil.setDarkMode(this);
         //私有的初始化Databinding和ViewModel方法
         initViewDataBinding(savedInstanceState);

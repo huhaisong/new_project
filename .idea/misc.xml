@@ -12,6 +12,16 @@
         <entry key="..\:/Users/p'p/AndroidStudioProjects/NewProject/model_example/src/main/res/layout/activity_example_main.xml" value="0.2421875" />
         <entry key="..\:/Users/p'p/AndroidStudioProjects/NewProject/model_user/src/main/res/layout/activity_main.xml" value="0.196875" />
         <entry key="..\:/Users/p'p/AndroidStudioProjects/NewProject/model_user/src/main/res/layout/activity_user_main.xml" value="0.21197916666666666" />
+        <entry key="..\:/android/new_project/app/src/main/res/drawable/bg_plash_radius_25.xml" value="0.35625" />
+        <entry key="..\:/android/new_project/app/src/main/res/drawable/bg_splash_time.xml" value="0.35625" />
+        <entry key="..\:/android/new_project/app/src/main/res/drawable/guide_indicator_layout.xml" value="0.35625" />
+        <entry key="..\:/android/new_project/app/src/main/res/drawable/tab_indicator_def.xml" value="0.35625" />
+        <entry key="..\:/android/new_project/app/src/main/res/drawable/tab_indicator_select.xml" value="0.35625" />
+        <entry key="..\:/android/new_project/app/src/main/res/layout/activity_guide.xml" value="0.23550724637681159" />
+        <entry key="..\:/android/new_project/app/src/main/res/layout/activity_main.xml" value="0.23550724637681159" />
+        <entry key="..\:/android/new_project/app/src/main/res/layout/activity_splash_layout.xml" value="0.23550724637681159" />
+        <entry key="..\:/android/new_project/app/src/main/res/layout/item_guide_layout.xml" value="0.23550724637681159" />
+        <entry key="..\:/android/new_project/model_user/src/main/res/layout/activity_user_main.xml" value="0.23550724637681159" />
       </map>
     </option>
   </component>

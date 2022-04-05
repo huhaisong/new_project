@@ -7,4 +7,8 @@ public class ARouterUtils {
     public static void toExampleActivity() {
         ARouter.getInstance().build(RouterPath.Example.ACTIVITY_EXAMPLE_MAIN).navigation();
     }
+
+    public static void toMAINActivity() {
+        ARouter.getInstance().build(RouterPath.Main.ACTIVITY_MAIN_ACTIVITY).navigation();
+    }
 }

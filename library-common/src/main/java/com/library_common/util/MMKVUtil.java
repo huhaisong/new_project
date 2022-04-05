@@ -2,11 +2,12 @@ package com.library_common.util;
 
 import android.text.TextUtils;
 
+import com.library_common.contast.Extras;
 import com.tencent.mmkv.MMKV;
 
 public class MMKVUtil {
     private static MMKV mmkv = MMKV.defaultMMKV();
-/*
+
     public static String getToken() {
         return mmkv.getString(Extras.TOKEN, "");
     }
@@ -15,7 +16,17 @@ public class MMKVUtil {
         mmkv.encode(Extras.TOKEN, token);
     }
 
-    public static String getLoginPhone() {
+    public static boolean getIsFirstTime() {
+        return mmkv.getBoolean(Extras.FIRST_TIME, false);
+    }
+
+    public static void setIsFirstTime(boolean isFirstTime) {
+        mmkv.encode(Extras.FIRST_TIME, isFirstTime);
+    }
+
+
+
+  /*  public static String getLoginPhone() {
         return mmkv.getString(Extras.PHONE, "");
     }
 
