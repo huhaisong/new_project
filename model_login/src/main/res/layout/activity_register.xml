@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.model_login.viewmodel.LoginViewModel" />
+            type="com.model_login.viewmodel.RegisterViewModel" />
     </data>
 
     <LinearLayout
@@ -26,13 +25,13 @@
             android:layout_marginEnd="12dp">
 
             <EditText
-                android:id="@+id/et_phone"
+                android:id="@+id/et_user_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:drawablePadding="20dp"
                 android:gravity="center_vertical"
-                android:hint="用户名/手机号码"
+                android:hint="用户名"
                 android:maxLines="1"
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp"
@@ -41,7 +40,7 @@
                 android:textSize="16dp" />
 
             <ImageButton
-                android:id="@+id/ibtn_delete_phone"
+                android:id="@+id/ibtn_delete_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"
@@ -114,6 +113,50 @@
             android:layout_height="0.3dp"
             android:background="@color/main_line" />
 
+        <FrameLayout
+            style="@style/mainLeftRightMargin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp">
+
+            <EditText
+                android:id="@+id/et_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawablePadding="20dp"
+                android:gravity="center_vertical"
+                android:hint="手机号"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/color_black"
+                android:textColorHint="@color/gray_999999"
+                android:textSize="16dp" />
+
+            <ImageButton
+                android:id="@+id/ibtn_delete_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:background="@null"
+                android:paddingStart="16dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="6dp"
+                android:src="@drawable/del"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <View
+            style="@style/mainLeftRightMargin"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="@color/main_line" />
+
         <LinearLayout
             style="@style/mainLeftRightMargin"
             android:layout_width="match_parent"
@@ -148,72 +191,29 @@
             android:layout_height="0.3dp"
             android:background="@color/main_line" />
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/et_invite_code"
             style="@style/mainLeftRightMargin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_height="52dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="邀请码"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textSize="15dp" />
 
-            <CheckBox
-                android:id="@+id/remember_password_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="14dp"
-                android:button="@drawable/check_box_bg"
-                android:text=" 记住密码" />
-
-            <CheckBox
-                android:id="@+id/auto_login_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="14dp"
-                android:button="@drawable/check_box_bg"
-                android:text=" 自动登录" />
-        </LinearLayout>
+        <View
+            style="@style/mainLeftRightMargin"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="@color/main_line" />
 
         <Button
             android:id="@+id/btn_login"
             style="@style/mainBtnCommonStyle"
             android:layout_marginTop="50dp"
-            android:text="登录" />
-
-        <Button
-            android:id="@+id/btn_regist"
-            style="@style/mainBtnCommonStyle2"
-            android:layout_marginTop="12dp"
             android:text="注册" />
-
-        <LinearLayout
-            style="@style/mainLeftRightMargin"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tv_forget"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:padding="12dp"
-                android:text="忘记密码" />
-
-            <View
-                android:layout_width="0.3dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/main_line" />
-
-            <TextView
-                android:id="@+id/tv_contact_customer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:padding="12dp"
-                android:text="联系客服" />
-        </LinearLayout>
 
         <View
             android:layout_width="match_parent"

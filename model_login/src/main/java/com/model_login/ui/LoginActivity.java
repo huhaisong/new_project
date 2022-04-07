@@ -10,6 +10,7 @@ import android.view.View;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.library_common.base.BaseActivity;
 import com.library_common.router.RouterPath;
+import com.library_common.util.ARouterUtils;
 import com.model_login.BR;
 import com.model_login.R;
 import com.model_login.databinding.ActivityLoginBinding;
@@ -67,15 +68,17 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
 
             }
         });
-//        mBinding.btnRegist.setOnClickListener(v -> startActivityForResult(RegisterActivity.class, 1000));
+        mBinding.btnRegist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouterUtils.toRegisterActivity();
+            }
+        });
 //        mBinding.tvForget.setOnClickListener(v -> startActivity(ForgetActivity.class));
         mBinding.ibtnDeletePhone.setOnClickListener(v -> mBinding.etPhone.setText(""));
         mBinding.ibtnDeletePwd.setOnClickListener(v -> mBinding.etPwd.setText(""));
         mBinding.cbPwdShow.setOnCheckedChangeListener((buttonView, isChecked) ->
                 mBinding.etPwd.setInputType(isChecked ? InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD : InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD));
-
-
-
 
     }
 
@@ -87,10 +90,5 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
     @Override
     public void initViewObservable() {
 
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
     }
 }

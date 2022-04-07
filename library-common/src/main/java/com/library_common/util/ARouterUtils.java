@@ -15,4 +15,8 @@ public class ARouterUtils {
     public static void toLoginActivity() {
         ARouter.getInstance().build(RouterPath.Login.ACTIVITY_LOGIN).navigation();
     }
+
+    public static void toRegisterActivity() {
+        ARouter.getInstance().build(RouterPath.Login.ACTIVITY_REGISTER).navigation();
+    }
 }
