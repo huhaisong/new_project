@@ -10,5 +10,9 @@ dependencyResolutionManagement {
 rootProject.name = "My Application"
 include ':app'
 include ':library-common'
-include ':model_user'
+include ':model_mine'
 include ':model_example'
+include ':model_task'
+include ':model_message'
+include ':model_login'
+include ':model_home'

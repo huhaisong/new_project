@@ -11,7 +11,7 @@ android {
         versionName rootProject.ext.android.versionName
 
         multiDexEnabled true
-        ndk{
+        ndk {
             abiFilters "armeabi-v7a"
         }
         javaCompileOptions {
@@ -24,7 +24,6 @@ android {
     dataBinding {
         enabled true
     }
-
 
 
     buildTypes {
@@ -56,7 +55,11 @@ android {
 }
 
 dependencies {
-    implementation project(':model_user')
+    implementation project(':model_mine')
     implementation project(':model_example')
+    implementation project(':model_message')
+    implementation project(':model_task')
+    implementation project(':model_home')
+    implementation project(':model_login')
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 }

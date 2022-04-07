@@ -13,7 +13,11 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/library-common" />
             <option value="$PROJECT_DIR$/model_example" />
-            <option value="$PROJECT_DIR$/model_user" />
+            <option value="$PROJECT_DIR$/model_home" />
+            <option value="$PROJECT_DIR$/model_login" />
+            <option value="$PROJECT_DIR$/model_message" />
+            <option value="$PROJECT_DIR$/model_mine" />
+            <option value="$PROJECT_DIR$/model_task" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

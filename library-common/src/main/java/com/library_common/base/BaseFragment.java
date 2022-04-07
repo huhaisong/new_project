@@ -210,7 +210,11 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mLoadingDialog.dismiss();
+        if (mLoadingDialog != null)
+            mLoadingDialog.dismiss();
+        if (mBinding != null) {
+            mBinding.unbind();
+        }
     }
 
     /**

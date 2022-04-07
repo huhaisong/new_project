@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.library_common.widget.CircleImageView
+        android:id="@+id/iv_image"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_tab_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_main_tab_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="3dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/unread_msg_number"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignTop="@+id/iv_main_tab_icon"
+            android:layout_alignRight="@+id/iv_main_tab_icon"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="2dp"
+            android:src="@drawable/unread_count_bg"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_main_tab_title"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/main_tab_select_color"
+        android:textSize="14dp" />
+
+</LinearLayout>

@@ -15,13 +15,23 @@
         <entry key="..\:/android/new_project/app/src/main/res/drawable/bg_plash_radius_25.xml" value="0.35625" />
         <entry key="..\:/android/new_project/app/src/main/res/drawable/bg_splash_time.xml" value="0.35625" />
         <entry key="..\:/android/new_project/app/src/main/res/drawable/guide_indicator_layout.xml" value="0.35625" />
+        <entry key="..\:/android/new_project/app/src/main/res/drawable/main_tab_select_color.xml" value="0.34933605720122574" />
         <entry key="..\:/android/new_project/app/src/main/res/drawable/tab_indicator_def.xml" value="0.35625" />
         <entry key="..\:/android/new_project/app/src/main/res/drawable/tab_indicator_select.xml" value="0.35625" />
         <entry key="..\:/android/new_project/app/src/main/res/layout/activity_guide.xml" value="0.23550724637681159" />
         <entry key="..\:/android/new_project/app/src/main/res/layout/activity_main.xml" value="0.23550724637681159" />
         <entry key="..\:/android/new_project/app/src/main/res/layout/activity_splash_layout.xml" value="0.23550724637681159" />
+        <entry key="..\:/android/new_project/app/src/main/res/layout/bottom_layout_bg.xml" value="0.22780797101449277" />
         <entry key="..\:/android/new_project/app/src/main/res/layout/item_guide_layout.xml" value="0.23550724637681159" />
+        <entry key="..\:/android/new_project/app/src/main/res/layout/tab_bottom.xml" value="0.22780797101449277" />
+        <entry key="..\:/android/new_project/library-common/src/main/res/drawable/tab_home.xml" value="0.34933605720122574" />
+        <entry key="..\:/android/new_project/library-common/src/main/res/drawable/tab_mine.xml" value="0.34933605720122574" />
+        <entry key="..\:/android/new_project/model_home/src/main/res/layout/fragment_home.xml" value="0.22780797101449277" />
+        <entry key="..\:/android/new_project/model_message/src/main/res/layout/fragment_message.xml" value="0.22780797101449277" />
+        <entry key="..\:/android/new_project/model_task/src/main/res/layout/fragment_task.xml" value="0.22780797101449277" />
         <entry key="..\:/android/new_project/model_user/src/main/res/layout/activity_user_main.xml" value="0.23550724637681159" />
+        <entry key="..\:/android/new_project/model_user/src/main/res/layout/fragment_mine.xml" value="0.22780797101449277" />
+        <entry key="..\:/android/new_project/model_user/src/main/res/layout/user_fragment_mine.xml" value="0.22780797101449277" />
       </map>
     </option>
   </component>

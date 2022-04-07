@@ -20,19 +20,30 @@ public class RouterPath {
 
     public static class Login {
         private static final String LOGIN = "/login";
-        /*登录界面*/
         public static final String ACTIVITY_LOGIN = LOGIN + "/Login";
         public static final String ACTIVITY_REGISTER = LOGIN + "/Register";
         public static final String ACTIVITY_RESET_PASSWORD = LOGIN + "/Reset_password";
     }
 
-    /**
-     * 用户组件
-     */
     public static class User {
         private static final String USER = "/user";
-        /*用户详情*/
         public static final String ACTIVITY_MAIN = USER + "/Main";
+        public static final String FRAGMENT_MINE = USER + "/fragment_mine";
+    }
+
+    public static class Home {
+        private static final String HOME = "/home";
+        public static final String FRAGMENT_HOME = HOME + "/fragment_home";
+    }
+
+    public static class Task {
+        private static final String TASK = "/task";
+        public static final String FRAGMENT_TASK = TASK + "/fragment_task";
+    }
+
+    public static class Message {
+        private static final String MESSAGE = "/message";
+        public static final String FRAGMENT_MESSAGE = MESSAGE + "/fragment_message";
     }
 
     public static class Example {
