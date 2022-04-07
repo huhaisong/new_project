@@ -9,7 +9,6 @@ import androidx.lifecycle.MutableLiveData;
 import com.library_common.base.BaseViewModel;
 import com.library_common.http.ErrorInfo;
 import com.library_common.http.HttpCallBack;
-import com.library_common.http.ResultData;
 import com.myapplication.model.ExampleModel;
 
 public class ExampleViewModel extends BaseViewModel<ExampleModel> {

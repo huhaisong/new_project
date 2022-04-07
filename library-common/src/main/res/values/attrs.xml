@@ -78,4 +78,10 @@
     <declare-styleable name="StatusView">
         <attr name="bg_color" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="GetCodeView">
+        <attr name="txt_color_def" format="color" />
+        <attr name="txt_color_select" format="color" />
+        <attr name="txt_size" format="integer" />
+    </declare-styleable>
 </resources>

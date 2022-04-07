@@ -14,6 +14,12 @@ import rxhttp.RxHttp;
  * Created by goldze on 2017/6/15.
  */
 public class BaseModel {
+    private String domain = "https://api.ydzhsq.com";
+
+
+    protected String getCommonBaseUrl() {
+        return domain;
+    }
 
     public Disposable drownFile(Android10DownloadFactory factory, String url, HttpDownLoadCallBack<Uri> callBack) {
         return RxHttp.get(url)

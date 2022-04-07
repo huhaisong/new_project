@@ -24,10 +24,21 @@
         <entry key="..\:/android/new_project/app/src/main/res/layout/bottom_layout_bg.xml" value="0.22780797101449277" />
         <entry key="..\:/android/new_project/app/src/main/res/layout/item_guide_layout.xml" value="0.23550724637681159" />
         <entry key="..\:/android/new_project/app/src/main/res/layout/tab_bottom.xml" value="0.22780797101449277" />
+        <entry key="..\:/android/new_project/library-common/src/main/res/drawable/bg_code_radius_5.xml" value="0.19947916666666668" />
+        <entry key="..\:/android/new_project/library-common/src/main/res/drawable/bg_color_primary_radius_25.xml" value="0.34933605720122574" />
+        <entry key="..\:/android/new_project/library-common/src/main/res/drawable/bg_error_radius_5.xml" value="0.34933605720122574" />
+        <entry key="..\:/android/new_project/library-common/src/main/res/drawable/check_box_bg.xml" value="0.34933605720122574" />
+        <entry key="..\:/android/new_project/library-common/src/main/res/drawable/selector_btn_common_bg.xml" value="0.34933605720122574" />
+        <entry key="..\:/android/new_project/library-common/src/main/res/drawable/selector_btn_common_bg2.xml" value="0.34933605720122574" />
+        <entry key="..\:/android/new_project/library-common/src/main/res/drawable/selector_pwd_show.xml" value="0.34933605720122574" />
         <entry key="..\:/android/new_project/library-common/src/main/res/drawable/tab_home.xml" value="0.34933605720122574" />
         <entry key="..\:/android/new_project/library-common/src/main/res/drawable/tab_mine.xml" value="0.34933605720122574" />
+        <entry key="..\:/android/new_project/library-common/src/main/res/drawable/withdraw_check_box_bg.xml" value="0.34933605720122574" />
+        <entry key="..\:/android/new_project/library-common/src/main/res/layout/get_code_layout.xml" value="0.22780797101449277" />
         <entry key="..\:/android/new_project/model_home/src/main/res/layout/fragment_home.xml" value="0.22780797101449277" />
+        <entry key="..\:/android/new_project/model_login/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/android/new_project/model_message/src/main/res/layout/fragment_message.xml" value="0.22780797101449277" />
+        <entry key="..\:/android/new_project/model_mine/src/main/res/layout/fragment_mine.xml" value="0.22780797101449277" />
         <entry key="..\:/android/new_project/model_task/src/main/res/layout/fragment_task.xml" value="0.22780797101449277" />
         <entry key="..\:/android/new_project/model_user/src/main/res/layout/activity_user_main.xml" value="0.23550724637681159" />
         <entry key="..\:/android/new_project/model_user/src/main/res/layout/fragment_mine.xml" value="0.22780797101449277" />
