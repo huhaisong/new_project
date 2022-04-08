@@ -16,6 +16,10 @@ public class ARouterUtils {
         ARouter.getInstance().build(RouterPath.Login.ACTIVITY_LOGIN).navigation();
     }
 
+    public static void toChangePasswordActivity() {
+        ARouter.getInstance().build(RouterPath.Login.ACTIVITY_CHANGE_PASSWORD).navigation();
+    }
+
     public static void toRegisterActivity() {
         ARouter.getInstance().build(RouterPath.Login.ACTIVITY_REGISTER).navigation();
     }

@@ -23,6 +23,7 @@ public class RouterPath {
         public static final String ACTIVITY_LOGIN = LOGIN + "/Login";
         public static final String ACTIVITY_REGISTER = LOGIN + "/Register";
         public static final String ACTIVITY_RESET_PASSWORD = LOGIN + "/Reset_password";
+        public static final String ACTIVITY_CHANGE_PASSWORD = LOGIN + "/ACTIVITY_CHANGE_PASSWORD";
     }
 
     public static class User {

@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 
 import com.library_common.MyApplication;
 import com.library_common.util.DeviceIdUtils;
+import com.library_common.util.MMKVUtil;
 
 import java.io.IOException;
 
@@ -52,7 +53,7 @@ public class HeaderIntercept implements Interceptor {
     }
 
     private String getToken() {
-        return "";
+        return MMKVUtil.getToken();
     }
 
     private static final String TAG = "HeaderIntercept";

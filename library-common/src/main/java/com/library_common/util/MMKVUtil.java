@@ -1,7 +1,5 @@
 package com.library_common.util;
 
-import android.text.TextUtils;
-
 import com.library_common.contast.Extras;
 import com.tencent.mmkv.MMKV;
 
@@ -23,7 +21,6 @@ public class MMKVUtil {
     public static void setIsFirstTime(boolean isFirstTime) {
         mmkv.encode(Extras.FIRST_TIME, isFirstTime);
     }
-
 
     public static boolean getIsRememberPassword() {
         return mmkv.getBoolean(Extras.REMEMBER_PASSWORD, false);

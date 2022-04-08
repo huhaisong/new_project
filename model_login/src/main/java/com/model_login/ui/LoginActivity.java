@@ -24,7 +24,6 @@ import com.library_common.base.BaseModel;
 import com.library_common.http.Android10DownloadFactory;
 import com.library_common.http.ErrorInfo;
 import com.library_common.http.HttpDownLoadCallBack;
-import com.library_common.http.ResultData;
 import com.library_common.router.RouterPath;
 import com.library_common.util.ARouterUtils;
 import com.library_common.util.DeviceIdUtils;
@@ -111,6 +110,27 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
 
             }
         });
+
+        mBinding.etCode.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mBinding.btnLogin.setEnabled(!TextUtils.isEmpty(mBinding.etUserName.getText().toString()) &&
+                        !TextUtils.isEmpty(mBinding.etCode.getText()) && mBinding.etCode.getText().length() == 6 &&
+                        !TextUtils.isEmpty(mBinding.etPwd.getText().toString()) && mBinding.etPwd.getText().toString().length() >= 6
+                );
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
         mBinding.btnRegist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -9,6 +9,7 @@ import com.library_common.base.BaseViewModel;
 import com.library_common.http.ErrorInfo;
 import com.library_common.http.HttpCallBack;
 import com.library_common.http.ResultData;
+import com.library_common.util.MMKVUtil;
 import com.model_login.model.LoginModel;
 
 public class LoginViewModel extends BaseViewModel<LoginModel> {
@@ -57,9 +58,10 @@ public class LoginViewModel extends BaseViewModel<LoginModel> {
 
 
     public void login(String userName, String password, String code) {
-        onScopeStart(mModel.login(userName, password,code,new HttpCallBack<String>() {
+        onScopeStart(mModel.login(userName, password, code, new HttpCallBack<String>() {
             @Override
             public void onSuccess(String data) {
+                MMKVUtil.setToken(data);
                 loginData.postValue(data);
             }
 

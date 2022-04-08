@@ -61,4 +61,9 @@ public class LoginModel extends BaseModel {
                 .subscribe(callBack::onSuccess, (OnError) callBack::onError);
     }
 
+    public Disposable changePassword(String newPassword, String password, HttpCallBack<String> callBack) {
+        return RxHttp.postJson(getCommonBaseUrl() + "/rest/password?newPassword="+newPassword+"&oldPassword="+password+"&secondPassword="+newPassword)
+                .asResponse(String.class)
+                .subscribe(callBack::onSuccess, (OnError) callBack::onError);
+    }
 }
