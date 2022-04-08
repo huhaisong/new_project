@@ -34,6 +34,13 @@ public class MineFragment extends BaseFragment<FragmentMineBinding, BaseViewMode
                 ARouterUtils.toChangePasswordActivity();
             }
         });
+
+        mBinding.tvVerifyId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouterUtils.toVerifyIDActivity();
+            }
+        });
     }
 
     @Override

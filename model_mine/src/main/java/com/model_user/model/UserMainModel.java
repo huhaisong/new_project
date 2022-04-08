@@ -26,4 +26,12 @@ public class UserMainModel extends BaseModel {
                 .asClass(String.class)
                 .subscribe(callBack::onSuccess, (OnError) callBack::onError);
     }
+
+    public Disposable verifyID(String name, String number,HttpCallBack<String> callBack) {
+        return RxHttp.postForm(getCommonBaseUrl()+"/certification")
+                .add("realName",name)
+                .add("userNumber",number)
+                .asClass(String.class)
+                .subscribe(callBack::onSuccess, (OnError) callBack::onError);
+    }
 }

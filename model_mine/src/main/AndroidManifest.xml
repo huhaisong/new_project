@@ -9,6 +9,7 @@
         <activity
             android:name="com.model_user.ui.UserMainActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.VerifyIDActivity" />
 
     </application>
 

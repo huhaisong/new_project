@@ -22,5 +22,7 @@ public class ARouterUtils {
 
     public static void toRegisterActivity() {
         ARouter.getInstance().build(RouterPath.Login.ACTIVITY_REGISTER).navigation();
+    } public static void toVerifyIDActivity() {
+        ARouter.getInstance().build(RouterPath.User.ACTIVITY_VERIFY_ID).navigation();
     }
 }

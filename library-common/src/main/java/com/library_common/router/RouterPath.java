@@ -30,6 +30,7 @@ public class RouterPath {
         private static final String USER = "/user";
         public static final String ACTIVITY_MAIN = USER + "/Main";
         public static final String FRAGMENT_MINE = USER + "/fragment_mine";
+        public static final String ACTIVITY_VERIFY_ID = USER + "/ACTIVITY_VERIFY_ID";
     }
 
     public static class Home {

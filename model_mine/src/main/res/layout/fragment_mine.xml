@@ -37,5 +37,15 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_login" />
 
+        <TextView
+            android:id="@+id/tv_verify_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="实名认证"
+            android:textSize="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_change_password" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
