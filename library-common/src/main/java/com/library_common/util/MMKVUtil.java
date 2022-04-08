@@ -25,6 +25,23 @@ public class MMKVUtil {
     }
 
 
+    public static boolean getIsRememberPassword() {
+        return mmkv.getBoolean(Extras.REMEMBER_PASSWORD, false);
+    }
+
+    public static void setIsRememberPassword(boolean isFirstTime) {
+        mmkv.encode(Extras.REMEMBER_PASSWORD, isFirstTime);
+    }
+
+    public static boolean getIsAutoLogin() {
+        return mmkv.getBoolean(Extras.AUTO_LOGIN, false);
+    }
+
+    public static void setIsAutoLogin(boolean isFirstTime) {
+        mmkv.encode(Extras.AUTO_LOGIN, isFirstTime);
+    }
+
+
 
   /*  public static String getLoginPhone() {
         return mmkv.getString(Extras.PHONE, "");

@@ -6,6 +6,9 @@ import android.content.pm.PackageManager;
 
 import androidx.annotation.NonNull;
 
+import com.library_common.MyApplication;
+import com.library_common.util.DeviceIdUtils;
+
 import java.io.IOException;
 
 import okhttp3.HttpUrl;
@@ -36,25 +39,15 @@ public class HeaderIntercept implements Interceptor {
     public Response intercept(@NonNull Chain chain) throws IOException {
         Request original = chain.request();
         HttpUrl url = original.url();
-        Request request;
-        if (url.host().contains("api.pano.video") || url.host().contains("api-cn.ronghub.com")) {
-            request = original.newBuilder()
-                    .addHeader("deviceId", deviceIdString)
-                    .addHeader("version", version)
-                    .method(original.method(), original.body())
-                    .build();
-
-        } else {
-            request = original.newBuilder()
-                    .addHeader("Authorization", getToken())
-                    .addHeader("Content-Type", "application/x-www-urlencoded")
-                    .addHeader("X-Requested-With", "XMLHttpRequest")
-                    .addHeader("deviceId", deviceIdString)
-                    .addHeader("client-type", "Android")
-                    .addHeader("version", version)
-                    .method(original.method(), original.body())
-                    .build();
-        }
+        Request request = original.newBuilder()
+                .addHeader("Authorization", getToken())
+                .addHeader("Content-Type", "application/x-www-urlencoded")
+                .addHeader("X-Requested-With", "XMLHttpRequest")
+                .addHeader("deviceId", deviceIdString)
+                .addHeader("client-type", "Android")
+                .addHeader("version", version)
+                .method(original.method(), original.body())
+                .build();
         return chain.proceed(request);
     }
 

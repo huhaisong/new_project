@@ -19,7 +19,7 @@ public class LoginViewModel extends BaseViewModel<LoginModel> {
     }
 
     public MutableLiveData<String> getBaidu = new MutableLiveData<>();
-    public MutableLiveData<String> loginData = new MutableLiveData<>();
+    public MutableLiveData<ResultData<String>> loginData = new MutableLiveData<>();
     public MutableLiveData<ResultData<String>> codeResult = new MutableLiveData<>();
 
     public void getBaiduInfo() {
@@ -50,6 +50,25 @@ public class LoginViewModel extends BaseViewModel<LoginModel> {
                 ResultData<String> strData = new ResultData<>();
                 strData.setErrorMsg(errorInfo.getErrorCode(), errorInfo.getErrorMsg());
                 codeResult.postValue(strData);
+                showShortToast(errorInfo.getErrorMsg());
+            }
+        }));
+    }
+
+
+    public void login(String userName, String password, String code) {
+        onScopeStart(mModel.login(userName, password,code,new HttpCallBack<String>() {
+            @Override
+            public void onSuccess(String data) {
+                ResultData<String> strData = new ResultData<>();
+                loginData.postValue(strData);
+            }
+
+            @Override
+            public void onError(ErrorInfo errorInfo) {
+                ResultData<String> strData = new ResultData<>();
+                strData.setErrorMsg(errorInfo.getErrorCode(), errorInfo.getErrorMsg());
+                loginData.postValue(strData);
                 showShortToast(errorInfo.getErrorMsg());
             }
         }));

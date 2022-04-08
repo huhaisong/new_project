@@ -15,6 +15,7 @@
         <item name="colorSecondary">@color/color_transparent</item>
         <item name="colorAccent">@color/color_ff6877</item>
         <item name="colorSecondaryVariant">@color/color_transparent</item>
+        <item name="android:screenOrientation">portrait</item>
         <item name="colorOnSecondary">@color/color_transparent</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/color_transparent</item>

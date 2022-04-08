@@ -14,7 +14,7 @@ import rxhttp.RxHttp;
  * Created by goldze on 2017/6/15.
  */
 public class BaseModel {
-    private String domain = "https://api.ydzhsq.com";
+    public static final String domain = "http://172.16.110.59:8080";
 
 
     protected String getCommonBaseUrl() {

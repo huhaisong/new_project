@@ -35,4 +35,19 @@ public class LoginModel extends BaseModel {
                 .asResponse(String.class)
                 .subscribe(callBack::onSuccess, (OnError) callBack::onError);
     }
+
+    //type：1登录2注册
+    public Disposable getImageCode(String type, HttpCallBack<String> callBack) {
+        return RxHttp.get(getCommonBaseUrl() + "/verify/generate/anonymous")
+                .add("type", type)
+                .asResponse(String.class)
+                .subscribe(callBack::onSuccess, (OnError) callBack::onError);
+    }
+
+    public Disposable login(String userName, String password,String code, HttpCallBack<String> callBack) {
+        return RxHttp.postJson(getCommonBaseUrl() + "/login?username=" + userName + "&password=" + password+"&code="+code)
+                .asResponse(String.class)
+                .subscribe(callBack::onSuccess, (OnError) callBack::onError);
+    }
+
 }

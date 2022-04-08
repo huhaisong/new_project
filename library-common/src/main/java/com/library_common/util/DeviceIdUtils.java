@@ -1,4 +1,4 @@
-package com.library_common.http;
+package com.library_common.util;
 
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;

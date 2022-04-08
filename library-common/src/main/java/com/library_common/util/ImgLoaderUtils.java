@@ -2,11 +2,13 @@ package com.library_common.util;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
@@ -38,18 +40,62 @@ public class ImgLoaderUtils {
                 .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
                 .diskCacheStrategy(DiskCacheStrategy.ALL);
 
+        Glide.with(MyApplication.getInstance())
+                .load(url)
+                .apply(requestOptions)
+                .into(imageview);
+    }
 
-        if (url != null && url.endsWith("gif")) {
-            Glide.with(MyApplication.getInstance())
-                    .load(url)
-                    .apply(requestOptions)
-                    .into(imageview);
-        } else {
-            Glide.with(MyApplication.getInstance())
-                    .load(url)
-                    .apply(requestOptions)
-                    .into(imageview);
-        }
+    public static void Load(ImageView imageview, String url) {
+        RequestOptions requestOptions = new RequestOptions()
+                .placeholder(new ColorDrawable(Color.BLACK))
+                .error(new ColorDrawable(Color.BLUE))
+                .fallback(new ColorDrawable(Color.RED))
+                .fitCenter()
+                .skipMemoryCache(true)
+                .dontAnimate()//防止设置placeholder导致第一次不显示网络图片,只显示默认图片的问题
+                .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                .diskCacheStrategy(DiskCacheStrategy.ALL);
+
+        Glide.with(MyApplication.getInstance())
+                .load(url)
+                .apply(requestOptions)
+                .into(imageview);
+    }
+
+    public static void Load(ImageView imageview, Uri url) {
+        RequestOptions requestOptions = new RequestOptions()
+                .placeholder(new ColorDrawable(Color.BLACK))
+                .error(new ColorDrawable(Color.BLUE))
+                .fallback(new ColorDrawable(Color.RED))
+                .fitCenter()
+                .skipMemoryCache(true)
+                .dontAnimate()//防止设置placeholder导致第一次不显示网络图片,只显示默认图片的问题
+                .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                .diskCacheStrategy(DiskCacheStrategy.ALL);
+
+        Glide.with(MyApplication.getInstance())
+                .load(url)
+                .apply(requestOptions)
+                .into(imageview);
+    }
+
+
+    public static void Load(ImageView imageview, GlideUrl url) {
+        RequestOptions requestOptions = new RequestOptions()
+                .placeholder(new ColorDrawable(Color.BLACK))
+                .error(new ColorDrawable(Color.BLUE))
+                .fallback(new ColorDrawable(Color.RED))
+                .fitCenter()
+                .skipMemoryCache(true)
+                .dontAnimate()//防止设置placeholder导致第一次不显示网络图片,只显示默认图片的问题
+                .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                .diskCacheStrategy(DiskCacheStrategy.NONE);
+
+        Glide.with(MyApplication.getInstance())
+                .load(url)
+                .apply(requestOptions)
+                .into(imageview);
     }
 
     public static void LoadCircle(ImageView imageview, String url, int defaultImg) {

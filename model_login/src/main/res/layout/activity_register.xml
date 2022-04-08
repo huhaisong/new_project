@@ -138,7 +138,7 @@
                 android:textSize="16dp" />
 
             <ImageButton
-                android:id="@+id/ibtn_delete_user_name"
+                android:id="@+id/ibtn_delete_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"

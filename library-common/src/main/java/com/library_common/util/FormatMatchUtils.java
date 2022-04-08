@@ -88,4 +88,18 @@ public class FormatMatchUtils {
 
         return m.matches();
     }
+
+
+    /**
+     * 是否是邮箱
+     *
+     * @return
+     */
+    public static boolean isEmail(String email) {
+        String check = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
+        Pattern regex = Pattern.compile(check);
+        Matcher matcher = regex.matcher(email);
+        boolean isMatched = matcher.matches();
+        return isMatched;
+    }
 }

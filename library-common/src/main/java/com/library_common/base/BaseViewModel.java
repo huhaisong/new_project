@@ -1,7 +1,10 @@
 package com.library_common.base;
 
 import android.app.Application;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LifecycleOwner;
@@ -9,11 +12,20 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 
 import com.library_common.MyApplication;
+import com.library_common.http.Android10DownloadFactory;
+import com.library_common.http.ErrorInfo;
+import com.library_common.http.HttpDownLoadCallBack;
+import com.library_common.http.OnError;
 import com.library_common.widget.StatusFunction;
 import com.rxjava.rxlife.ScopeViewModel;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.disposables.Disposable;
+import rxhttp.RxHttp;
+import rxhttp.wrapper.entity.Progress;
 
 public class BaseViewModel<M extends BaseModel> extends ScopeViewModel {
     protected M mModel;
@@ -28,6 +40,25 @@ public class BaseViewModel<M extends BaseModel> extends ScopeViewModel {
             uc = new UIChangeLiveData();
         }
         return uc;
+    }
+
+    public void drownFile(Android10DownloadFactory factory, String url, HttpDownLoadCallBack<Uri> callBack) {
+        onScopeStart(mModel.drownFile(factory, url, new HttpDownLoadCallBack<Uri>() {
+            @Override
+            public void onSuccess(Uri data) {
+                callBack.onSuccess(data);
+            }
+
+            @Override
+            public void onProgress(Progress progress) {
+                callBack.onProgress(progress);
+            }
+
+            @Override
+            public void onError(ErrorInfo errorInfo) {
+                callBack.onError(errorInfo);
+            }
+        }));
     }
 
     public void registerRxBus() {
