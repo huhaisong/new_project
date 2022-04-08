@@ -18,40 +18,21 @@ public class RegisterViewModel extends BaseViewModel<LoginModel> {
         this.mModel = LoginModel.getInstance();
     }
 
-    public MutableLiveData<String> getBaidu = new MutableLiveData<>();
-    public MutableLiveData<String> loginData = new MutableLiveData<>();
-    public MutableLiveData<ResultData<String>> codeResult = new MutableLiveData<>();
+    public MutableLiveData<String> registerData = new MutableLiveData<>();
 
-    public void getBaiduInfo() {
-        onScopeStart(mModel.getBaiduContent(new HttpCallBack<String>() {
+    public void register(String userName, String password, String mobile, String code, String inviteCode) {
+        onScopeStart(mModel.register(userName, password, mobile, code, inviteCode, new HttpCallBack<String>() {
             @Override
             public void onSuccess(String data) {
-                getBaidu.postValue(data);
+                registerData.postValue(data);
             }
 
             @Override
             public void onError(ErrorInfo errorInfo) {
-
-            }
-        }));
-    }
-
-    public void getCode(String phoneCode, String strPhone, String s) {
-        onScopeStart(mModel.getCodeInOffsite(phoneCode, strPhone, s, new HttpCallBack<String>() {
-            @Override
-            public void onSuccess(String data) {
-                ResultData<String> strData = new ResultData<>();
-                strData.setData("发送成功");
-                codeResult.postValue(strData);
-            }
-
-            @Override
-            public void onError(ErrorInfo errorInfo) {
-                ResultData<String> strData = new ResultData<>();
-                strData.setErrorMsg(errorInfo.getErrorCode(), errorInfo.getErrorMsg());
-                codeResult.postValue(strData);
                 showShortToast(errorInfo.getErrorMsg());
             }
         }));
     }
+
+
 }
