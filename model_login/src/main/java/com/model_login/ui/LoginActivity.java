@@ -13,6 +13,8 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.CompoundButton;
 
+import androidx.lifecycle.Observer;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.LazyHeaders;
@@ -22,6 +24,7 @@ import com.library_common.base.BaseModel;
 import com.library_common.http.Android10DownloadFactory;
 import com.library_common.http.ErrorInfo;
 import com.library_common.http.HttpDownLoadCallBack;
+import com.library_common.http.ResultData;
 import com.library_common.router.RouterPath;
 import com.library_common.util.ARouterUtils;
 import com.library_common.util.DeviceIdUtils;
@@ -153,6 +156,11 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
 
     @Override
     public void initViewObservable() {
-
+        mViewModel.loginData.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                showShortToast("登录成功");
+            }
+        });
     }
 }

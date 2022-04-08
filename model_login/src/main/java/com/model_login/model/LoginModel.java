@@ -51,7 +51,12 @@ public class LoginModel extends BaseModel {
     }
 
     public Disposable register(String userName, String password, String mobile, String code, String inviteCode, HttpCallBack<String> callBack) {
-        return RxHttp.postJson(getCommonBaseUrl() + "/register?username=" + userName + "&password=" + password + "&code=" + code + "&mobile=" + mobile+ "&inviteCode=" + inviteCode)
+        return RxHttp.postJson(getCommonBaseUrl() + "/register")
+                .add("username", userName)
+                .add("password", password)
+                .add("code", code)
+                .add("mobile", mobile)
+                .add("inviteCode", inviteCode)
                 .asResponse(String.class)
                 .subscribe(callBack::onSuccess, (OnError) callBack::onError);
     }
