@@ -7,6 +7,8 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 
+import androidx.lifecycle.Observer;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.library_common.base.BaseActivity;
 import com.library_common.router.RouterPath;
@@ -82,6 +84,13 @@ public class VerifyIDActivity extends BaseActivity<ActivityVerifyIdBinding, Veri
 
     @Override
     public void initViewObservable() {
-
+        mViewModel.verifyIDData.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                showShortToast("认证成功");
+                mBinding.etNumber.setText("");
+                mBinding.etName.setText("");
+            }
+        });
     }
 }
