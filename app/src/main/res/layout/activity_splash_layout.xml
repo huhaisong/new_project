@@ -14,11 +14,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_remote_splash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_splash_top"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:scaleType="centerCrop"
+               />
+
+            <ImageView
+                android:id="@+id/iv_splash_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:scaleType="centerCrop"
+                 />
+
+        </LinearLayout>
+
         <ImageView
             android:id="@+id/iv_splash"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop" />
+            android:layout_weight="7"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_splash" />
 
         <TextView
             android:id="@+id/tv_splash_finish"
@@ -30,6 +57,6 @@
             android:background="@drawable/bg_splash_time"
             android:gravity="center"
             android:text="5"
-            android:textColor="@color/color_874fec" />
+            android:textColor="@color/white" />
     </RelativeLayout>
 </layout>

@@ -15,7 +15,7 @@ public class MMKVUtil {
     }
 
     public static boolean getIsFirstTime() {
-        return mmkv.getBoolean(Extras.FIRST_TIME, false);
+        return mmkv.getBoolean(Extras.FIRST_TIME, true);
     }
 
     public static void setIsFirstTime(boolean isFirstTime) {

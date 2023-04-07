@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -21,6 +23,7 @@ import com.library_common.base.BaseActivity;
 import com.library_common.base.BaseViewModel;
 import com.library_common.util.ARouterUtils;
 import com.library_common.util.MMKVUtil;
+import com.library_common.util.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,6 +74,10 @@ public class GuideActivity extends BaseActivity<ActivityGuideBinding, BaseViewMo
 
     @Override
     public int initContentView(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        StatusBarUtil.setTransparentForWindow(this);
         return R.layout.activity_guide;
     }
 

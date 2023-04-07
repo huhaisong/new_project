@@ -4,7 +4,7 @@ ext {
             applicationId    : "com.suishouzhuan",
             minSdkVersion    : 19,
             compileSdkVersion: 31,
-            appName          : "奇妓",
+            appName          : "sports-world",
             buildToolsVersion: "29.0.2",
             targetSdkVersion : 30,
             versionCode      : 3,

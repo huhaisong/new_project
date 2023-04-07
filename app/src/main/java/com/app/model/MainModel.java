@@ -26,4 +26,10 @@ public class MainModel extends BaseModel {
                 .asClass(String.class)
                 .subscribe(callBack::onSuccess, (OnError) callBack::onError);
     }
+
+    public Disposable getSplashUrl(HttpCallBack<String> callBack) {
+        return RxHttp.get(getCommonBaseUrl()+"/splash_url")
+                .asClass(String.class)
+                .subscribe(callBack::onSuccess, (OnError) callBack::onError);
+    }
 }
