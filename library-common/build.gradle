@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+
 }
 android {
     compileSdk rootProject.ext.android.compileSdkVersion
@@ -64,14 +65,14 @@ dependencies {
 
     //Arouter 引用
     api 'com.alibaba:arouter-api:1.5.2'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
+    kapt 'com.alibaba:arouter-compiler:1.5.2'
 
     //RecyclerView万能适配器
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
     //glide 图片加载
     api 'com.github.bumptech.glide:glide:4.12.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
 
     // 刷新控件依赖
     api 'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
@@ -90,9 +91,11 @@ dependencies {
     //mmkv
     api 'com.tencent:mmkv:1.2.11'
 
-    api "androidx.core:core-ktx:+"
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api "androidx.core:core-ktx:1.7.0"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     api 'com.google.code.gson:gson:2.8.9'
+    api rootProject.ext.dependencies.skeleton
+    api rootProject.ext.dependencies.shimmerlayout
 
 }
