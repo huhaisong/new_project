@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="please_close_vpn_and_open_again">请您关闭vpn代理之后再使用,谢谢~</string>
+</resources>

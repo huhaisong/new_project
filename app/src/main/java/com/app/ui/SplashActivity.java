@@ -9,6 +9,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.app.main.BR;
+import com.app.main.BuildConfig;
 import com.app.main.R;
 import com.app.main.databinding.ActivitySplashLayoutBinding;
 import com.app.viewmodel.SplashViewModel;
@@ -23,6 +24,9 @@ import com.library_common.util.ARouterUtils;
 import com.library_common.util.ImgLoaderUtils;
 import com.library_common.util.MMKVUtil;
 import com.library_common.util.StatusBarUtil;
+import com.library_common.util.SystemUtils;
+
+import java.util.Objects;
 
 /**
  * 启动页
@@ -43,8 +47,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashLayoutBinding, Sp
 
             mHandler.removeCallbacks(timeRunnable);
             if (inTime == SPLASH_TIME) {
-                ARouterUtils.toMAINActivity();
-                finish();
+                toMainActivity();
             } else {
                 mHandler.postDelayed(timeRunnable, 1000L);
                 inTime += 1000L;
@@ -78,10 +81,25 @@ public class SplashActivity extends BaseActivity<ActivitySplashLayoutBinding, Sp
             @Override
             public void onClick(View view) {
                 mHandler.removeCallbacks(timeRunnable);
-                ARouterUtils.toMAINActivity();
-                finish();
+                toMainActivity();
             }
         });
+    }
+
+    private void toMainActivity() {
+        if (SystemUtils.isOpenProxyHost(mContext)
+                && !BuildConfig.DEBUG) {
+            showShortToast(getString(R.string.please_close_vpn_and_open_again));
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    finish();
+                }
+            }, 100);
+        } else {
+            ARouterUtils.toMAINActivity();
+            finish();
+        }
     }
 
     @Override
